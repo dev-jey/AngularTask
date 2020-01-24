@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http'; 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AdminDashboardModule } from './modules/admin-dashboard/admin-dashboard.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
@@ -18,6 +19,7 @@ import { AuthenticationModule } from './modules/authentication/authentication.mo
     RouterModule,
     AdminDashboardModule,
     AuthenticationModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

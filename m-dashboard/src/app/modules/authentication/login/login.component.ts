@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/_services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +15,6 @@ export class LoginComponent implements OnInit {
     email: 'Enter a valid email'
   };
   constructor(
-    private auth: AuthenticationService,
     private fb: FormBuilder,
     private router: Router) { }
 
@@ -28,21 +26,24 @@ export class LoginComponent implements OnInit {
  */
   initLoginForm() {
     this.loginForm = this.fb.group({
-      email: [null, Validators.required, Validators.email],
+      email: [null, Validators.compose([Validators.required, Validators.email])],
       password: [null, Validators.required]
     });
   }
-
-  login() {
+  /**
+   * 
+   * Execute login functionality
+   */
+  login(e) {
+    e.preventDefault();
     this.loginFormSubmitted = true;
     //validate form
     if (this.loginForm.invalid) {
       return;
     }
-    this.auth.getJSON().subscribe(data => {
-      console.log(data)
-      this.router.navigate['/admin'];
-    })
+    //Local Storage Usage
+    localStorage.setItem('user', JSON.stringify(this.loginForm.value));
+    this.router.navigateByUrl('/dashboard');
   }
 
 }

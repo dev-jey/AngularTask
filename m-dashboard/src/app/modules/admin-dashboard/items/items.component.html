@@ -1,1 +1,28 @@
-<p>items works!</p>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>Products In Our Store</h5>
+            </div>
+            <div class="ibox-content">
+
+                <p class="m-b-lg">
+                    Welcome. Get our products here
+                </p>
+
+                <div class="dd" id="nestable2" *ngFor="let product of products">
+                    <ol class="dd-list">
+                        <li class="dd-item" data-id="2">
+                            <div class="dd-handle">
+                                <span class="float-right"> {{product.price}} </span>
+                                <span class="label label-info"><i class="fa fa-cog"></i></span>{{product.name}}
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

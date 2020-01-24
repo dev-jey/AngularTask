@@ -12,14 +12,13 @@ const routes: Routes = [
         m => m.AuthenticationModule
       )
   },
-  // {
-  //   path: "admin",
-  //   loadChildren: () => import("./modules/admin-dashboard/admin-dashboard.module").then(m => m.AdminDashboardModule)
-  // },
+  {
+    path: "admin",
+    loadChildren: () => import("./modules/admin-dashboard/admin-dashboard.module").then(m => m.AdminDashboardModule)
+  },
   {
     path: "**",
-    component: HomeComponent,
-    children: [{ path: "", component: PageNotFoundComponent }]
+    component: PageNotFoundComponent
   }
 ];
 
