@@ -1,0 +1,27 @@
+    [
+        {
+            "id": 1,
+            "name": "Kiwi",
+            "price": 30
+        },
+        {
+            "id": 2,
+            "name": "Unga",
+            "price": 300
+        },
+        {
+            "id": 3,
+            "name": "Rice",
+            "price": 320
+        },
+        {
+            "id": 4,
+            "name": "Nivea",
+            "price": 1000
+        },
+        {
+            "id": 5,
+            "name": "Yoghurt",
+            "price": 80
+        }
+    ]
